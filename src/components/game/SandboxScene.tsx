@@ -96,11 +96,7 @@ export default function SandboxScene() {
           <Canvas
             camera={{ position: [5, 3, 6], fov: 45 }}
             shadows
-            gl={{
-              antialias: true,
-              toneMapping: THREE.ACESFilmicToneMapping,
-              toneMappingExposure: 1.1,
-            }}
+            gl={{ antialias: true, toneMapping: THREE.ACESFilmicToneMapping }}
           >
             <Suspense fallback={<LoadingFallback />}>
               {/* Освещение */}
@@ -109,13 +105,6 @@ export default function SandboxScene() {
                 position={[8, 10, 5]}
                 intensity={2}
                 castShadow
-                shadow-mapSize={[2048, 2048]}
-                shadow-camera-near={0.1}
-                shadow-camera-far={50}
-                shadow-camera-left={-10}
-                shadow-camera-right={10}
-                shadow-camera-top={10}
-                shadow-camera-bottom={-10}
               />
               <pointLight position={[-4, 4, 2]} intensity={1.2} color="#0066ff" />
               <pointLight position={[4, 2, -3]} intensity={0.6} color="#002244" />

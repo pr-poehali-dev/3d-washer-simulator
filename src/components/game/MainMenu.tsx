@@ -146,7 +146,7 @@ export default function MainMenu() {
         <Canvas
           camera={{ position: [3, 1.5, 5], fov: 45 }}
           shadows
-          gl={{ antialias: true, toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 1.2 }}
+          gl={{ antialias: true, toneMapping: THREE.ACESFilmicToneMapping }}
         >
           <Suspense fallback={null}>
             <ambientLight intensity={0.3} />
@@ -154,7 +154,6 @@ export default function MainMenu() {
               position={[5, 8, 5]}
               intensity={1.5}
               castShadow
-              shadow-mapSize={[2048, 2048]}
             />
             <pointLight position={[-3, 2, 2]} intensity={0.8} color="#00c8ff" />
             <pointLight position={[3, -1, -2]} intensity={0.4} color="#0044ff" />

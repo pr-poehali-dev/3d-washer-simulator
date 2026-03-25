@@ -80,11 +80,11 @@ export default function WorkshopScene() {
         <Canvas
           camera={{ position: [3, 2, 5], fov: 45 }}
           shadows
-          gl={{ antialias: true, toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 1.2 }}
+          gl={{ antialias: true, toneMapping: THREE.ACESFilmicToneMapping }}
         >
           <Suspense fallback={null}>
             <ambientLight intensity={0.5} />
-            <directionalLight position={[5, 8, 5]} intensity={2} castShadow shadow-mapSize={[2048, 2048]} />
+            <directionalLight position={[5, 8, 5]} intensity={2} castShadow />
             <pointLight position={[-3, 3, 3]} intensity={1} color="#0066ff" />
             <Environment preset="studio" />
             <ContactShadows position={[0, -1.6, 0]} opacity={0.6} scale={6} blur={2} />

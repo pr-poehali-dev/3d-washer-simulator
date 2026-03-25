@@ -59,7 +59,7 @@ export default function CustomizerScene() {
         <Canvas
           camera={{ position: [3, 2, 5], fov: 45 }}
           shadows
-          gl={{ antialias: true, toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 1.3 }}
+          gl={{ antialias: true, toneMapping: THREE.ACESFilmicToneMapping }}
         >
           <Suspense fallback={null}>
             <ambientLight intensity={0.6} />
