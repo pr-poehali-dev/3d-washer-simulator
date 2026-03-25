@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useGameStore } from '@/store/gameStore';
 import MainMenu from '@/components/game/MainMenu';
 import SandboxScene from '@/components/game/SandboxScene';
@@ -5,9 +6,15 @@ import WorkshopScene from '@/components/game/WorkshopScene';
 import GarageScene from '@/components/game/GarageScene';
 import CustomizerScene from '@/components/game/CustomizerScene';
 import SettingsScene from '@/components/game/SettingsScene';
+import LoadingScreen from '@/components/game/LoadingScreen';
 
 export default function Index() {
   const screen = useGameStore((s) => s.screen);
+  const [loaded, setLoaded] = useState(false);
+
+  if (!loaded) {
+    return <LoadingScreen onComplete={() => setLoaded(true)} />;
+  }
 
   return (
     <div className="w-screen h-screen overflow-hidden">
