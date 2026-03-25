@@ -1,5 +1,5 @@
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Environment, Grid, ContactShadows, Stats } from '@react-three/drei';
+import { OrbitControls, Environment, ContactShadows } from '@react-three/drei';
 import { Suspense } from 'react';
 import * as THREE from 'three';
 import WashingMachine3D from './WashingMachine3D';
@@ -28,19 +28,8 @@ function Room() {
         <meshStandardMaterial color="#090c12" metalness={0.1} roughness={0.9} />
       </mesh>
 
-      {/* Линии сетки на полу */}
-      <Grid
-        position={[0, -1.59, 0]}
-        args={[20, 20]}
-        cellSize={1}
-        cellThickness={0.3}
-        cellColor="#0a2030"
-        sectionSize={5}
-        sectionThickness={0.8}
-        sectionColor="#0a3050"
-        fadeDistance={15}
-        fadeStrength={1}
-      />
+      {/* Сетка на полу */}
+      <gridHelper args={[20, 20, '#0a3050', '#0a2030']} position={[0, -1.59, 0]} />
     </group>
   );
 }
@@ -170,7 +159,6 @@ export default function SandboxScene() {
                 maxDistance={15}
               />
 
-              <Stats />
             </Suspense>
           </Canvas>
 

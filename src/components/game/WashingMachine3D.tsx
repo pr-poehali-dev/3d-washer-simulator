@@ -247,7 +247,7 @@ export default function WashingMachine3D({ showDoor = true }: Props) {
           </mesh>
           {/* Ручка дверцы */}
           <mesh position={[0.72, 0, 0.04]}>
-            <capsuleGeometry args={[0.04, 0.25, 8, 16]} />
+            <cylinderGeometry args={[0.04, 0.04, 0.25, 16]} />
             <meshStandardMaterial color="#333" metalness={0.9} roughness={0.1} />
           </mesh>
         </group>
