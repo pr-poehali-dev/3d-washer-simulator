@@ -2,91 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap");
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 220 20% 6%;
+    --foreground: 210 40% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 20% 8%;
+    --card-foreground: 210 40% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 20% 8%;
+    --popover-foreground: 210 40% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 200 100% 50%;
+    --primary-foreground: 220 20% 6%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 20% 14%;
+    --secondary-foreground: 210 40% 95%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 20% 14%;
+    --muted-foreground: 215 20% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 200 100% 50%;
+    --accent-foreground: 220 20% 6%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 20% 18%;
+    --input: 220 20% 14%;
+    --ring: 200 100% 50%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --game-blue: #00c8ff;
+    --game-blue-dark: #0090cc;
+    --game-orange: #ff6b00;
+    --game-green: #00ff88;
+    --game-red: #ff3333;
+    --game-bg: #0a0e14;
+    --game-panel: #0d1520;
+    --game-border: #1a2a3a;
+    --game-glow: rgba(0, 200, 255, 0.3);
   }
 }
 
@@ -97,5 +55,119 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: "Rajdhani", sans-serif;
+    overflow: hidden;
   }
+}
+
+.font-orbitron {
+  font-family: "Orbitron", monospace;
+}
+
+.font-rajdhani {
+  font-family: "Rajdhani", sans-serif;
+}
+
+.game-glow {
+  box-shadow:
+    0 0 20px var(--game-glow),
+    0 0 40px rgba(0, 200, 255, 0.1);
+}
+
+.game-glow-text {
+  text-shadow:
+    0 0 10px var(--game-blue),
+    0 0 20px var(--game-blue);
+}
+
+.game-panel {
+  background: var(--game-panel);
+  border: 1px solid var(--game-border);
+}
+
+.neon-border {
+  border: 1px solid var(--game-blue);
+  box-shadow:
+    0 0 8px rgba(0, 200, 255, 0.4),
+    inset 0 0 8px rgba(0, 200, 255, 0.05);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #0090cc, #00c8ff);
+  color: #0a0e14;
+  font-family: "Orbitron", monospace;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  transition: all 0.2s;
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.4);
+}
+
+.btn-primary:hover {
+  box-shadow:
+    0 0 25px rgba(0, 200, 255, 0.7),
+    0 0 50px rgba(0, 200, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.slider-rpm::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--game-blue);
+  box-shadow: 0 0 10px var(--game-blue);
+  cursor: pointer;
+}
+
+.slider-rpm::-webkit-slider-runnable-track {
+  height: 4px;
+  background: linear-gradient(to right, var(--game-blue), var(--game-orange));
+  border-radius: 2px;
+}
+
+@keyframes spin-drum {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes water-wave {
+  0%,
+  100% {
+    transform: translateX(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-5px) scaleY(1.1);
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.scanline {
+  animation: scanline 4s linear infinite;
+  pointer-events: none;
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
 }

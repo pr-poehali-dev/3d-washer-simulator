@@ -1,14 +1,22 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useGameStore } from '@/store/gameStore';
+import MainMenu from '@/components/game/MainMenu';
+import SandboxScene from '@/components/game/SandboxScene';
+import WorkshopScene from '@/components/game/WorkshopScene';
+import GarageScene from '@/components/game/GarageScene';
+import CustomizerScene from '@/components/game/CustomizerScene';
+import SettingsScene from '@/components/game/SettingsScene';
 
-const Index = () => {
+export default function Index() {
+  const screen = useGameStore((s) => s.screen);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
-      </div>
+    <div className="w-screen h-screen overflow-hidden">
+      {screen === 'menu' && <MainMenu />}
+      {screen === 'sandbox' && <SandboxScene />}
+      {screen === 'workshop' && <WorkshopScene />}
+      {screen === 'garage' && <GarageScene />}
+      {screen === 'customizer' && <CustomizerScene />}
+      {screen === 'settings' && <SettingsScene />}
     </div>
   );
-};
-
-export default Index;
+}
